@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d37b39c-af4e-4d0b-ab3d-761dc3ad5552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cafe_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cafe_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment_space/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/environment_space/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reception/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reception/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -33,6 +34,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Persia\Desktop\sepehr_temp\maktab_52\cafe_project\user" />
+      <recent name="C:\Users\Persia\Desktop\sepehr_temp\maktab_52\cafe_project\environment_space" />
+      <recent name="C:\Users\Persia\Desktop\sepehr_temp\maktab_52\cafe_project\core" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Persia\Desktop\sepehr_temp\maktab_52\cafe_project\database_json_tables" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="cafe_project" type="Python.FlaskServer">
@@ -59,7 +71,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1624175122520</updated>
-      <workItem from="1624175201374" duration="464000" />
+      <workItem from="1624175201374" duration="1648000" />
+      <workItem from="1624207653674" duration="4961000" />
     </task>
     <servers />
   </component>
@@ -76,5 +89,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cafe_project$cafe_project.coverage" NAME="cafe_project Coverage Results" MODIFIED="1624213016148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
