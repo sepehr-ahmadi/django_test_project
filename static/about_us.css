@@ -1,0 +1,24 @@
+.content {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../templates/3.jpg");
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 1rem;
+    color: white;
+    padding-left: 3rem;
+
+}
+
+h1 {
+    padding-left: 10vw;
+    padding-top: 5vh;
+    font-family: "Inconsolata", sans-serif;
+    font-size: 60px;
+}
+
+.text {
+    padding: 2rem;
+    font-size: x-large;
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
+}
