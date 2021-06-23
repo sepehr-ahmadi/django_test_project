@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>cafe</title>
+      <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ url_for("static",filename="cafe_base.css") }}" rel="stylesheet">
+    {% block css %}
+    {% endblock %}
 </head>
 <body>
-
+<header>
+    <h1>CAFE_5</h1>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">MENU</a></li>
+            <li><a href="#">WHERE</a></li>
+        </ul>
+    </nav>
+    <div class="hamber-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+<div id="content">{% block content %}
+{% endblock %}</div>
+<div id="footer">
+    {% block footer %}
+        &copy; Copyright 2021 by five group.
+    {% endblock %}
+</div>
 </body>
 </html>
