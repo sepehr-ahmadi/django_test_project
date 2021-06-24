@@ -21,12 +21,12 @@ def menu():
 
 @app.route("/receipts")
 def receipts():
-    return render_template('Receipts.html')
+    return render_template('receipts.html')
 
 
 @app.route("/receipts_print")
 def recepits_print():
-    return render_template('Recepits-print.html')
+    return render_template('recepits-print.html')
 
 
 @app.route("/table")
