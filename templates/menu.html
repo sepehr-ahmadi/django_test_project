@@ -1,51 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>menu</title>
+{% extends "cafe_base.html" %}
+{% block title %}menu{% endblock %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for("static",filename="menu.css") }}" rel="stylesheet">
+{% endblock %}
 
-  <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box}
-body {font-family: Arial, Helvetica, sans-serif;}
 
-.navbar {
-  width: 100%;
-  background-color: #d2ab0d;
-  overflow: auto;
-}
-
-.navbar a {
-  float: left;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-  width: 50%; /* Four links of equal widths */
-  text-align: center;
-}
-
-.navbar a:hover {
-  background-color: #2c2d2c;
-}
-
-.navbar a.active {
-  background-color: #2c2d2c;
-}
-
-@media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
-}
-
-</style>
-</head>
-<body>
+{% block content %}
 
 <div class="container" style="box-shadow: #1d2124 inset;padding-top: 3rem;padding-left: 8rem">
   <div  style="max-width:800px; border: #1b1e21 wave;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #f5f1f1">
@@ -103,5 +64,4 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <p><iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d103661.01258664865!2d51.332329!3d35.7162165!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00cb6c9764a5%3A0xef0071656687c2f!2z2K7Yp9mG2Ycg2KjYp9ix2YrYs9iq2Kcg2KfZitix2KfZhg!5e0!3m2!1sen!2s!4v1528051651138" width="400" height="400" frameborder="0"></iframe></p>
 </div>
 
-</body>
-</html>
+{% endblock %}
