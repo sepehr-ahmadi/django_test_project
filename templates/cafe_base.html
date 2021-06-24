@@ -6,7 +6,6 @@
     <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for("static",filename="cafe_base.css") }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ url_for("static",filename="bootstrap.min.css") }}" rel="stylesheet">
     {% block css %}
     {% endblock %}
@@ -18,10 +17,10 @@
     <h1>CAFE_5</h1>
     <nav>
         <ul class="main-nav">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">MENU</a></li>
-            <li><a href="#">WHERE</a></li>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('about_us') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('menu') }}">MENU</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
         </ul>
     </nav>
     <div class="hamber-menu">
