@@ -1,7 +1,7 @@
 .content {
     background-position: center;
     background-size: cover;
-    background-image: url({{url_for('templates',filename='3.jpg')}});
+    background-image: var(--background-url);
     min-height: 100vh;
     text-align: center;
     padding-top: 1rem;
