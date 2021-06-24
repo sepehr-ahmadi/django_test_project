@@ -19,12 +19,12 @@ def menu():
     return render_template('menu.html')
 
 
-@app.route("/Receipts")
+@app.route("/receipts")
 def receipts():
     return render_template('Receipts.html')
 
 
-@app.route("/Receipts_print")
+@app.route("/receipts_print")
 def recepits_print():
     return render_template('Recepits-print.html')
 
