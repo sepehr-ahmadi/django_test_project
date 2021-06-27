@@ -23,19 +23,20 @@
   <div style="padding-left: 1rem">
     <div id="Eat "  style="display: block; padding-top: 2rem">
 
-      <h5>Bread Basket</h5>
-      <p >Assortment of fresh baked fruit breads and muffins 5.50</p><br>
 
-      <h5>Honey Almond Granola with Fruits</h5>
+      <pre style="font-size: 22px" >Bread Basket                                             <input type="checkbox" checked="checked"  ></pre>
+      <p >Assortment of fresh baked fruit breads and muffins 5.50</p> <br>
+
+      <pre style="font-size: 22px">Honey Almond Granola with Fruits                         <input type="checkbox"  ></pre>
       <p >Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
 
-      <h5>Belgian Waffle</h5>
+      <pre style="font-size: 22px">Belgian Waffle                                           <input type="checkbox" ></pre>
       <p >Vanilla flavored batter with malted flour 7.50</p><br>
 
-      <h5>Scrambled eggs</h5>
+      <pre style="font-size: 22px">Scrambled eggs                                           <input type="checkbox" ></pre>
       <p>Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
 
-      <h5>Blueberry Pancakes</h5>
+      <pre style="font-size: 22px">Blueberry Pancakes                                       <input type="checkbox" ></pre>
       <p >With syrup, butter and lots of berries 8.50</p>
     </div>
 
@@ -56,12 +57,26 @@
       <p >Coke, Sprite, Fanta, etc. 2.50</p>
 
 </div>
-</div>
+    <div>
+      <hr>
+      <h1>Show Orders</h1>
 
-  </div>
+      <form >
+         <label for="table_number" >table number:</label>
+         <input type="text" id="table_number" name="table_number"><br><br>
+
+         <label for="customer_name">customer name:</label>
+         <input type="text" id="customer_name" name="customer_name"><br><br>
+
+         <button type="button" autofocus onclick="alert('Welcome to Cafe 5!')" style="color: white;background-color: #0f6674;font-size: larger">Submit</button>
+      </form>
+    </div>
+
+</div>
 <img src="https://www.w3schools.com/w3images/coffeehouse2.jpg" style="padding-top: 2rem;width: 80.5%">
   <hr>
-  <p><iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d103661.01258664865!2d51.332329!3d35.7162165!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00cb6c9764a5%3A0xef0071656687c2f!2z2K7Yp9mG2Ycg2KjYp9ix2YrYs9iq2Kcg2KfZitix2KfZhg!5e0!3m2!1sen!2s!4v1528051651138" width="400" height="400" frameborder="0"></iframe></p>
-</div>
+  </div>
+
+
 
 {% endblock %}
