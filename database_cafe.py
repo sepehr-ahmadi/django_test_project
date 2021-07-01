@@ -1,10 +1,15 @@
 import psycopg2
 
-conn = psycopg2.connect(database="cafe_project", user='postgres', password='mehdi2053', host='127.0.0.1', port='5432')
+DB_HOST = "localhost"
+DB_NAME = "postgres"
+DB_USER = "postgres"
+DB_PASS = "masiandsepehr7368"
+conn = psycopg2.connect(host=DB_HOST, dbname=DB_NAME, user=DB_USER, password=DB_PASS)
 
-cursor = conn.cursor()
-cursor.execute("")
-conn.commit
-# data = cursor.fetchone()
 
-conn.close()
+def get_user_database():
+    cur = conn.cursor()
+    s = 'SELECT * FROM users'
+    cur.execute(s)
+    list_users = cur.fetchall()
+    return list_users

@@ -1,0 +1,36 @@
+{% extends "cafe_base.html" %}
+{% block title %}Contact{% endblock %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for("static",filename="user.css") }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <table style="border: 1px solid black;">
+    <thead>
+    <tr>
+    <td>ID</td>
+    <td>first name</td>
+    <td>last name</td>
+    <td>phone number</td>
+    <td>birth day </td>
+    <td>email</td>
+    </tr>
+
+
+    </thead>
+    <tbody>
+{% for row in list_users %}
+    <tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+    <td>{{ row[4] }}</td>
+    <td>{{ row[6] }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
+
