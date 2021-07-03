@@ -7,9 +7,10 @@ DB_PASS = "masiandsepehr7368"
 conn = psycopg2.connect(host=DB_HOST, dbname=DB_NAME, user=DB_USER, password=DB_PASS)
 
 
-def get_user_database():
+def read_user_database():
     cur = conn.cursor()
     s = 'SELECT * FROM users'
     cur.execute(s)
     list_users = cur.fetchall()
+    cur.close()
     return list_users

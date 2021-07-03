@@ -1,0 +1,39 @@
+{% extends "cafe_base.html" %}
+{% block title %}dashboard{% endblock %}
+{% block css %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="vh-100" id="side-panel">
+                <button class="btn-block">Dashboard</button>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#orders">
+                            Orders
+                        </a>
+                    </div>
+                    <div id="orders" class="collapse" data-parent="#side-panel">
+                        <div class="card-body">
+                            <button href="#">New orders</button>
+                            <a href="#">Cooking orders</a>
+                            <a href="#">Served orders</a>
+                            <a href="#">Deleted orders</a>
+                            <a href="#">Paid orders</a>
+                            <a href="#">Archive</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-block">Tables</button>
+                <button class="btn-block">Menu Items</button>
+                <button class="btn-block">Receipts</button>
+            </div>
+        </div>
+        <div class="col-9 bg-secondary">
+
+        </div>
+    </div>
+</div>
+{% block content %}

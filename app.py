@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests
 import psycopg2
 import psycopg2.extras
@@ -6,11 +6,6 @@ import psycopg2.extras
 import database_cafe
 
 app = Flask(__name__, template_folder='templates')
-DB_HOST = "localhost"
-DB_NAME = "postgres"
-DB_USER = "postgres"
-DB_PASS = "masiandsepehr7368"
-conn = psycopg2.connect(host=DB_HOST, dbname=DB_NAME, user=DB_USER, password=DB_PASS)
 
 
 @app.route("/")
@@ -26,11 +21,17 @@ def about_us():
 
 @app.route('/user')
 def user():
-    list_users = database_cafe.get_user_database()
+    list_users = database_cafe.read_user_database()
     return render_template("user.html", list_users=list_users)
-@app.route('/register')
+
+
+@app.route('/register', methods=['POST', 'GET'])
 def register():
-    return
+    if request.method == 'POST':
+        print(request.form[''])
+    # user_registration_data = request.form['first_name']
+    # print(user_registration_data)
+    return render_template('register.html')
 
 
 @app.route("/menu_api")
@@ -39,6 +40,9 @@ def menu_api():
     print(resp.json())
     userdict = {"users": resp.json()}
     return userdict
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 
 @app.route("/menu")
