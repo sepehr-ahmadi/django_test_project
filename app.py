@@ -19,25 +19,30 @@ def about_us():
     return render_template('about_us.html')
 
 
-@app.route('/user')
-def user():
-    list_users = database_cafe.read_user_database()
+@app.route('/user_list')
+def user_list():
+    list_users = database_cafe.user_crud.read_user_database()
     return render_template("user.html", list_users=list_users)
 
 
-@app.route('/register', methods=['POST', 'GET'])
-def register():
+@app.route('/user_register', methods=['POST', 'GET'])
+def user_register():
     if request.method == 'POST':
         user_registration_data = request.form
-        database_cafe.create_user_database(user_registration_data)
+        database_cafe.user_crud.create_user_database(user_registration_data)
     return render_template('register.html')
-@app.route('/update_user', methods=['POST', 'GET'])
-def update_user():
+@app.route('/user_update', methods=['POST', 'GET'])
+def user_update():
     if request.method == 'POST':
         user_registration_data = request.form
-        database_cafe.update_user_database(user_registration_data)
+        database_cafe.user_crud.update_user_database(user_registration_data)
     return render_template('update_user.html')
-
+@app.route('/user_delete', methods=['POST', 'GET'])
+def user_delete():
+    if request.method == 'POST':
+        user_registration_data = request.form
+        database_cafe.user_crud.delete_user_database(user_registration_data)
+    return render_template('delete_user.html')
 
 @app.route("/menu_api")
 def menu_api():
@@ -74,7 +79,7 @@ def receipts():
 
 @app.route("/receipts_print")
 def receipts_print():
-    return render_template('receipts-print.html')
+    return render_template('recepits-print.html')
 
 
 @app.route("/table")

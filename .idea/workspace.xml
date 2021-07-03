@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d37b39c-af4e-4d0b-ab3d-761dc3ad5552" name="Default Changelist" comment="the login and register was added&#10;customer dashboard was added">
-      <change afterPath="$PROJECT_DIR$/templates/update_user.html" afterDir="false" />
+    <list default="true" id="5d37b39c-af4e-4d0b-ab3d-761dc3ad5552" name="Default Changelist" comment="create read and update for users was added">
+      <change afterPath="$PROJECT_DIR$/templates/delete_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database_cafe.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_cafe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customer_dasboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer_dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +135,7 @@
       <workItem from="1625103904360" duration="6780000" />
       <workItem from="1625135143543" duration="6814000" />
       <workItem from="1625247265537" duration="13946000" />
-      <workItem from="1625314062613" duration="10244000" />
+      <workItem from="1625314062613" duration="12670000" />
     </task>
     <task id="LOCAL-00001" summary="we edited base front-end template">
       <created>1624476073807</created>
@@ -213,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625286291891</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="create read and update for users was added">
+      <created>1625326091643</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1625326091643</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,10 +250,11 @@
     <MESSAGE value="create local link in menu" />
     <MESSAGE value="i add database_cafe.py to my files for managing database" />
     <MESSAGE value="the login and register was added&#10;customer dashboard was added" />
-    <option name="LAST_COMMIT_MESSAGE" value="the login and register was added&#10;customer dashboard was added" />
+    <MESSAGE value="create read and update for users was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="create read and update for users was added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/cafe_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1625323687404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cafe_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1625328555812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cafe_project$cafe_project.coverage" NAME="cafe_project Coverage Results" MODIFIED="1624474066492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
