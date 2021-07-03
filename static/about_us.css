@@ -2,18 +2,33 @@
     background-position: center;
     background-size: cover;
     background-image: var(--background-url);
-    min-height: 100vh;
+    min-height: 75vh;
     text-align: center;
     padding-top: 1rem;
     color: yellow;
     padding-left: 3rem;
-
+    width: 100%;
+    height: auto;
 }
 
+@media (min-width: 640px) {
+    .header-about {
+        font-size: 85px;
+    }
 
-
-.text {
-    padding: 2rem;
-    font-size: x-large;
-    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
+    .text {
+        padding: 2rem;
+        font-size: x-large;
+        font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
+    }
 }
+@media (max-width: 640px) {
+    .header-about {
+        font-size: 120px;
+    }
+
+    .text {
+        font-size: 30px;
+    }
+}
+
