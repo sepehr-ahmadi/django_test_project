@@ -18,9 +18,9 @@
 </head>
 <body>
 <header>
-    <h1>CAFE_5</h1>
+    <h2>CAFE 5</h2>
     <nav>
-        <ul class="main-nav">
+        <ul class="main-nav" style="position: absolute; right: 1rem" id="my-nav">
             <li><a href="{{ url_for('home') }}" id="home">HOME</a></li>
             <li><a href="{{ url_for('about_us') }}" id="about">ABOUT</a></li>
             <li><a href="{{ url_for('menu') }}" id="menu">MENU</a></li>
@@ -28,18 +28,39 @@
         </ul>
     </nav>
         <div >
-            <a type="button" class="btn btn-danger btn-lg" href="{{ url_for('login') }}" id="login"> Log In </a>
-            <a type="button" class="btn btn-outline-danger btn-lg" href="{{ url_for("user_register") }}" id="register"> Register </a>
+            <a type="button" class="btn btn-danger btn" href="{{ url_for('login') }}" id="login"> Log In </a>
+            <a type="button" class="btn btn-outline-danger btn" href="{{ url_for("user_register") }}" id="register"> Register </a>
 
         </div>
 </header>
 <div id="content">{% block content %}
 {% endblock %}</div>
-<div id="footer">
+<div id="footer" style="background-color: #de9c0f;">
     {% block footer %}
-        <p>Contact Us : <i class="fa fa-phone-square fa-lg">  </i>  09123456789  <i class="fa fa-envelope-square fa-lg" >  </i> cafe@good_cafe.com <i class="fa fa-map-marker fa-lg"> </i> Tehran, Milad Tower, Cafe </p>
-        <p>&copy; Copyright 2021 by five group.</p>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-8">
+                <p style=" padding: 1rem">Contact Us : <i class="fa fa-phone-square fa-lg">  </i>  09123456789  <i class="fa fa-envelope-square fa-lg" >  </i> cafe@good_cafe.com <i class="fa fa-map-marker fa-lg"> </i> Tehran, Milad Tower, Cafe 5 </p>
+            </div>
+            <div class="col-12 col-sm-4">
+                 <p style=" padding: 1rem">&copy; Copyright 2021 by group five(5)</p>
+            </div>
+        </div>
+        </div>
+
     {% endblock %}
 </div>
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("my-nav");
+var btns = header.getElementsByTagName("a");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
 </body>
 </html>

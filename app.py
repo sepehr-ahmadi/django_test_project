@@ -31,18 +31,23 @@ def user_register():
         user_registration_data = request.form
         database_cafe.user_crud.create_user_database(user_registration_data)
     return render_template('register.html')
+
+
 @app.route('/user_update', methods=['POST', 'GET'])
 def user_update():
     if request.method == 'POST':
         user_registration_data = request.form
         database_cafe.user_crud.update_user_database(user_registration_data)
     return render_template('update_user.html')
+
+
 @app.route('/user_delete', methods=['POST', 'GET'])
 def user_delete():
     if request.method == 'POST':
         user_registration_data = request.form
         database_cafe.user_crud.delete_user_database(user_registration_data)
     return render_template('delete_user.html')
+
 
 @app.route("/menu_api")
 def menu_api():
@@ -93,4 +98,4 @@ def contact():
 
 
 if __name__ == '__main__':
-    pass
+    app.run(port=5002)
