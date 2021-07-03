@@ -28,10 +28,15 @@ def user():
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
-        print(request.form[''])
-    # user_registration_data = request.form['first_name']
-    # print(user_registration_data)
+        user_registration_data = request.form
+        database_cafe.create_user_database(user_registration_data)
     return render_template('register.html')
+@app.route('/update_user', methods=['POST', 'GET'])
+def update_user():
+    if request.method == 'POST':
+        user_registration_data = request.form
+        database_cafe.update_user_database(user_registration_data)
+    return render_template('update_user.html')
 
 
 @app.route("/menu_api")
@@ -40,9 +45,21 @@ def menu_api():
     print(resp.json())
     userdict = {"users": resp.json()}
     return userdict
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")
+
+
+@app.route("/customer_dashboard")
+def customer_dashboard():
+    return render_template("customer_dashboard.html")
+
+
+@app.route("/cashier_dashboard")
+def cashier_dashboard():
+    return render_template("cashier_dashboard.html")
 
 
 @app.route("/menu")
@@ -56,8 +73,8 @@ def receipts():
 
 
 @app.route("/receipts_print")
-def recepits_print():
-    return render_template('recepits-print.html')
+def receipts_print():
+    return render_template('receipts-print.html')
 
 
 @app.route("/table")
@@ -71,4 +88,4 @@ def contact():
 
 
 if __name__ == '__main__':
-    app.run(port=8765)
+    pass
