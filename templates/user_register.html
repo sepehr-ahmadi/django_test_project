@@ -1,0 +1,23 @@
+{% extends "cafe_base.html" %}
+{% block title %}home{% endblock %}
+{% block css %}
+    <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
+{% endblock %}
+{% block script %}
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+{% block content %}
+<form  action="{{ url_for('user_register') }}" method="post">
+<input type="text" id="first_name" size="40" placeholder="first name" name="first_name"><br>
+    <input type="text" id="last_name" size="40" placeholder="last name" name="last_name"><br>
+    <input type="tel" id="phone_number" size="40" placeholder="phone number" name="phone_number"><br>
+    <input type="date" id="birthdate" size="40" placeholder="birthday" name="birthday"><br>
+    <input type="email" id="email" size="40" placeholder="email" name="email"><br>
+    <input type="text" id="password" size="40" placeholder="password" name="password"><br>
+<input type="submit" id="submitaiton" value="register">
+</form>
+
+{% endblock %}
