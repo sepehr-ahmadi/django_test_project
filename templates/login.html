@@ -4,25 +4,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid" style="height: 75vh">
 
-  <h1>welcom to dashboard cafe 5</h1>
-    <button type="button" onclick="document.getElementById('login-modal').style.display='block'">Login</button>
+  <h2 style="text-align: center; color: black; padding: 1rem;">welcom to cafe 5</h2>
 
-    <div class="modal-content w-50 m-auto bg-light" id="login-modal" style="display: none">
 
-        <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">X</span>
-        <form>
+    <div class="modal-content w-50 m-auto bg-light" id="login-modal" style="display: block">
+
+{#        <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">X</span>#}
+        <form class="form-group text-center p-3" style="height: 45vh">
+            <h3>Login</h3><br>
             <label for="uname"><b>Username</b></label>
-            <input id="uname" type="text" placeholder="Enter Username" name="uname" required><br>
+            <input class="input-group" id="uname" type="text" placeholder="Enter Username" name="uname" required>
 
             <label for="psw"><b>Password</b></label>
-            <input id="psw" type="text" placeholder="Enter Password" name="psw" required>
-
+            <input class="input-group" id="psw" type="text" placeholder="Enter Password" name="psw" required><br>
+            <button type="submit" class="btn btn-success btn-block">Login</button>
+            <button type="" class="btn btn-danger btn-block">Cancel</button>
 
         </form>
-        <button type="button" class="btn btn-success btn-block" onclick="">Login</button>
-        <button type="button" class="btn-danger" onclick="">Cancel</button>
+
+
     </div>
 
 </div>
