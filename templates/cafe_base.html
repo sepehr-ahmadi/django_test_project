@@ -13,53 +13,96 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     {% block css %}
     {% endblock %}
-{% block script %}
-{% endblock %}
+    {% block script %}
+    {% endblock %}
 </head>
 <body>
 <header>
-    <h2>CAFE 5</h2>
-    <nav>
-        <ul class="main-nav" style="position: absolute; right: 1rem" id="my-nav">
-            <li><a href="{{ url_for('home') }}" id="home">HOME</a></li>
-            <li><a href="{{ url_for('about_us') }}" id="about">ABOUT</a></li>
-            <li><a href="{{ url_for('menu_list') }}" id="menu">MENU</a></li>
-            <li><a href="{{ url_for('contact') }}" id="contact">CONTACT</a></li>
-        </ul>
-    </nav>
-        <div >
-            <a type="button" class="btn btn-danger btn" href="{{ url_for('login') }}" id="login"> Log In </a>
-            <a type="button" class="btn btn-outline-danger btn" href="{{ url_for("user_register") }}" id="register"> Register </a>
+    <div class="container-fluid" id="myHeader">
+        <div class="row">
+            <div class="col-4">
+                <h2>CAFE 5</h2>
+            </div>
+            <div class="col-8" id="register-nav" style="float: right; text-align: right">
 
+                <a type="button" class="btn btn-primary btn" href="{{ url_for('login') }}" id="login"> Log In </a>
+                <a type="button" class="btn btn-outline-primary btn" href="{{ url_for("user_register") }}"
+                   id="register">
+                    Register </a>
+
+            </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <div id="myTopnav" class="topnav">
+                        <a href="{{ url_for('home') }}" id="home" class="btn active">HOME</a>
+                        <a href="{{ url_for('about_us') }}" id="about" class="btn">ABOUT</a>
+                        <a href="{{ url_for('menu_list') }}" id="menu" class="btn">MENU</a>
+                        <a href="{{ url_for('contact') }}" id="contact" class="btn">CONTACT</a>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </div>
 </header>
 <div id="content">{% block content %}
 {% endblock %}</div>
 <div id="footer" style="background-color: #de9c0f;">
     {% block footer %}
         <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-sm-8">
-                <p style=" padding: 1rem">Contact Us : <i class="fa fa-phone-square fa-lg">  </i>  09123456789  <i class="fa fa-envelope-square fa-lg" >  </i> cafe@good_cafe.com <i class="fa fa-map-marker fa-lg"> </i> Tehran, Milad Tower, Cafe 5 </p>
+            <div class="row">
+                <div class="col-12 col-sm-8">
+                    <p style=" padding: 1rem">Contact Us : <i class="fa fa-phone-square fa-lg"> </i> 09123456789 <i
+                            class="fa fa-envelope-square fa-lg"> </i> cafe@good_cafe.com <i
+                            class="fa fa-map-marker fa-lg"> </i> Tehran, Milad Tower, Cafe 5 </p>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <p style=" padding: 1rem">&copy; Copyright 2021 by group five(5)</p>
+                </div>
             </div>
-            <div class="col-12 col-sm-4">
-                 <p style=" padding: 1rem">&copy; Copyright 2021 by group five(5)</p>
-            </div>
-        </div>
         </div>
 
     {% endblock %}
 </div>
 <script>
-// Add active class to the current button (highlight it)
-var header = document.getElementById("my-nav");
-var btns = header.getElementsByTagName("a");
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+<script>
+
+var header = document.getElementById("myTopnav");
+var btns = header.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
-  });
+    btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
+</script>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
 }
 </script>
 </body>
