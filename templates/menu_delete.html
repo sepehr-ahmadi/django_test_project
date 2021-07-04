@@ -10,11 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('table_register') }}" method="post">
-    <input type="text" id="table_number" size="40" placeholder="table number" name="table_number"><br>
-    <input type="text" id="coffe_space_position" size="40" placeholder="cafe space position" name="cafe_space_position"><br>
-
-<input type="submit" id="submitaiton" value="table registration">
+<form  action="{{ url_for('menu_delete') }}" method="post">
+    <input type="text" id="id" size="40" placeholder="id" name="id"><br>
+<input type="submit" id="submitaiton" value="delete">
 </form>
 
 {% endblock %}

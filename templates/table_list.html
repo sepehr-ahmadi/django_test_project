@@ -2,53 +2,36 @@
 {% block title %}table{% endblock %}
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href="{{ url_for("static",filename="table.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="table.css") }}" rel="stylesheet">
 {% endblock %}
 {% block content %}
 
 
-<div class="container-fluid" style="box-shadow: #1d2124 inset;padding-top: 3rem;padding-left: 8rem">
+    <div class="container-fluid" style="box-shadow: #1d2124 inset;padding-top: 3rem;padding-left: 8rem">
 
-  <div  style="max-width:800px; border: #1b1e21 wave;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #f5f1f1">
-
-
-
-            <div class="row" style="margin-top: 2rem">
-                <label  >table number 1:</label><br>
-                 <div class="col-md-8 " style="border: #0f6674 solid;padding-left: .7rem">
-
-                     <h3 >Table 1</h3>
-
-                </div><hr>
-                <label  >table number 2:</label>
-                <div class="col-md-4 " style="border: #0f6674 solid;padding-left: .7rem">
-
-                    <h3>Table 2</h3>
-
-                </div><hr>
-
-            </div>
+        <div style="max-width:800px; border: #1b1e21 wave;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #f5f1f1">
+<table>
+            <thead>
+            <tr>
+                <td>table number</td>
+                <td>table location</td>
+            </tr>
 
 
+            </thead>
+            <tbody>
+            {% for row in table_list %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+</table>
+        </div>
 
-            <div class="row " >
-                <label  >table number 3:</label>
-                <div class="col-md-8" style="border: #0f6674 solid;padding-left: .7rem">
 
-                    <h3 >Table 3</h3>
+    </div>
 
-                </div><hr>
-                <label  >table number 4:</label>
-                <div class="col-md-4" style="border: #0f6674 solid;padding-left: .7rem">
-
-                    <h3 >Table 4</h3>
-
-                </div>
-
-            </div>
-
-      </div>
-
-</div>
 
 {% endblock %}

@@ -48,7 +48,7 @@ def user_update():
     if request.method == 'POST':
         user_registration_data = request.form
         database_cafe.update_user_database(user_registration_data)
-    return render_template('user_updata.html')
+    return render_template('user_update.html')
 
 
 @app.route('/user_delete', methods=['POST', 'GET'])
@@ -84,9 +84,37 @@ def menu_api():
     return userdict
 
 
-@app.route("/menu")
-def menu():
-    return render_template("menu.html")
+@app.route("/menu_register", methods=['POST', 'GET'])
+def menu_register():
+    if request.method == 'POST':
+        menu_registration_data = request.form
+        print(menu_registration_data)
+        database_cafe.create_menu_item_database(menu_registration_data)
+        # return redirect(url_for('home'))
+    return render_template("menu_register.html")
+
+
+@app.route("/menu_list")
+def menu_list():
+    list_users = database_cafe.read_menu_item_database('*')
+    return render_template("user_list.html", list_users=list_users)
+
+
+@app.route('/menu_update', methods=['POST', 'GET'])
+def menu_update():
+    if request.method == 'POST':
+        menu_registration_data = request.form
+        print(menu_registration_data)
+        database_cafe.update_menu_item_database(menu_registration_data)
+    return render_template('menu_update.html')
+
+
+@app.route('/menu_delete', methods=['POST', 'GET'])
+def menu_delete():
+    if request.method == 'POST':
+        menu_registration_data = request.form
+        database_cafe.delete_menu_item_database(menu_registration_data)
+    return render_template('menu_delete.html')
 
 
 ###----------------------------receipts part-----------------###
@@ -101,9 +129,36 @@ def receipts_print():
 
 
 ####------------------------table part-----------------------------#####
-@app.route("/table")
-def table():
-    return render_template('table_list.html')
+@app.route('/table_register', methods=['POST', 'GET'])
+def table_register():
+    if request.method == 'POST':
+        table_registration_data = request.form
+        print(request.form)
+        database_cafe.create_table_database(table_registration_data)
+        # return redirect(url_for('cashier_dashboard'))
+    return render_template('table_register.html')
+
+
+@app.route("/table_list")
+def table_list():
+    table_list = database_cafe.read_table_database('*')
+    return render_template("table_list.html", table_list=table_list)
+
+
+@app.route('/table_update', methods=['POST', 'GET'])
+def table_update():
+    if request.method == 'POST':
+        table_registration_data = request.form
+        database_cafe.update_table_database(table_registration_data)
+    return render_template('table_update.html')
+
+
+@app.route('/table_delete', methods=['POST', 'GET'])
+def table_delete():
+    if request.method == 'POST':
+        table_registration_data = request.form
+        database_cafe.delete_table_database(table_registration_data)
+    return render_template('table_delete.html')
 
 
 if __name__ == '__main__':
