@@ -7,18 +7,20 @@
 
 {% block content %}
 <div class="container">
-    <div class="card-header " >
-{#        <img src="../static/img/co-b1-1.jpg" style="width: 100%;padding-top: 2%"><br>#}
-        <h1 style="padding-top: 2%">Contact</h1>
+    <div class="row text-center pt-3 pl-5 pr-5" >
+        <h3 style=" color: black">Contact Us</h3>
+
 
     </div>
-    <div  style="width: 100%;padding-top: 2%">
+    <p style="padding-left: 20px">You can contact us using the form below. Please send us your comments and suggestions.</p>
+    <div  style="width: 100%;">
         <div class="wapper bg-withe select-shadow radious">
 
-            <h1>Enter the details to contact us</h1>
+
+            <h5>Enter the details to contact us</h5>
             <hr>
 
-            <form >
+            <form class="form-group" >
                 <label for="fname">First name:</label>
                 <input type="text" id="fname" name="fname" style="margin-left: 2%"><br><br>
 
@@ -30,13 +32,14 @@
 
 
                 <label for="textarea">message text:</label>
-                <input type="text" id="textarea" name="text" size="80" style="margin-left: .7%"><br><br>
+                <textarea class="form-control" rows="4" id="textarea"></textarea><br>
 
-                <input type="submit" value="send message">
+                <input class="btn btn-success" type="submit" value="send message" style="float: right"><br>
                 <hr>
             </form>
 
-<p>You can contact us using the form below. Please send us your comments and suggestions.</p>
+
+
 
         </div>
     </div>
@@ -44,5 +47,6 @@
 
 
 </div>
+    <br>
 {% endblock %}
 
