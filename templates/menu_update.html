@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('menu_update') }}" method="post">
+<form class="form-group" action="{{ url_for('menu_update') }}" method="post">
     <input type="text" id="id" size="40" placeholder="id" name="id"><br>
     <input type="text" id="name" size="40" placeholder="name" name="name"><br>
     <input type="text" id="catagory" size="40" placeholder="catagory" name="catagory"><br>

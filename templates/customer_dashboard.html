@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+{% set list1 = userdata.split(',') %}
+
+<li> first name:{{ list1[1] }} }</li>
+<li>last name:{{ userdata.2 }} </li>
+<li>tel: {{ userdata.3 }}</li>
+<li>birthday:{{ userdata.4 }}</li>
+<li> email: {{ userdata.6 }}</li>
 
 </body>
 </html>

@@ -43,11 +43,12 @@ def read_user_database(userdata):
     if userdata == "*":
         s = 'SELECT * FROM users'
         cur.execute(s)
-
+        list_users = cur.fetchall()
     else:
         s = 'SELECT * From users where phone_number=%s'
         cur.execute(s, (userdata["phone_number"],))
-    list_users = cur.fetchall()
+        list_users = cur.fetchall()
+        print(type(list_users))
     cur.close()
     return list_users
 

@@ -1,6 +1,8 @@
 /** {box-sizing: border-box}*/
 /*body {font-family: Arial, Helvetica, sans-serif;}*/
-
+body{
+  height:100vh;
+}
 .navbar {
   width: 100%;
   background-color: #d2ab0d;

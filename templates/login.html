@@ -7,23 +7,24 @@
 <div class="container-fluid">
 
   <h1>welcom to dashboard cafe 5</h1>
-    <button type="button" onclick="document.getElementById('login-modal').style.display='block'">Login</button>
-
-    <div class="modal-content w-50 m-auto bg-light" id="login-modal" style="display: none">
-
-        <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">X</span>
-        <form>
-            <label for="uname"><b>Username</b></label>
-            <input id="uname" type="text" placeholder="Enter Username" name="uname" required><br>
+{#    <button type="button" onclick="document.getElementById('login-modal').style.display='block'">Login</button>#}
+{##}
+{#    <div class="modal-content w-50 m-auto bg-light" id="login-modal" style="display: none">#}
+{##}
+{#        <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">X</span>#}
+        <form method="post">
+            <label for="uname"><b>phone number</b></label>
+            <input id="phone_number" type="text" placeholder="Enter phone number" name="phone_number" required><br>
 
             <label for="psw"><b>Password</b></label>
-            <input id="psw" type="text" placeholder="Enter Password" name="psw" required>
+            <input id="psw" type="text" placeholder="Enter Password" name="password" required>
 
 
-        </form>
-        <button type="button" class="btn btn-success btn-block" onclick="">Login</button>
-        <button type="button" class="btn-danger" onclick="">Cancel</button>
-    </div>
+
+        <button type="submit" class="btn btn-success btn-block" onclick="">Login</button>
+        <a type="button" class=" btn btn-danger btn-block" href="{{ url_for('home') }}" onclick="">Cancel</a>
+             </form>
+{#    </div>#}
 
 </div>
 {% endblock %}

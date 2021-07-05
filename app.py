@@ -59,14 +59,22 @@ def user_delete():
     return render_template('user_delete.html')
 
 
-@app.route("/login")
+@app.route("/login", methods=['POST', 'GET'])
 def login():
+    if request.method == 'POST':
+        user_login_data = request.form
+        print((database_cafe.read_user_database(user_login_data)))
+
+        if database_cafe.read_user_database(user_login_data) != []:
+            return redirect(url_for('customer_dashboard', userdata=database_cafe.read_user_database(user_login_data)))
+
     return render_template("login.html")
 
 
 @app.route("/customer_dashboard")
 def customer_dashboard():
-    return render_template("customer_dashboard.html")
+    # return render_template("customer_dashboard.html",userdata=request.args.get('userdata'))
+    return render_template("customer_dashboard.html",userdata=request.args.get('userdata'))
 
 
 @app.route("/cashier_dashboard")
@@ -94,10 +102,10 @@ def menu_register():
     return render_template("menu_register.html")
 
 
-@app.route("/menu_list")
+@app.route("/menu_list", methods=['POST', 'GET'])
 def menu_list():
-    list_users = database_cafe.read_menu_item_database('*')
-    return render_template("user_list.html", list_users=list_users)
+    menu_list = database_cafe.read_menu_item_database('*')
+    return render_template("menu_list.html", menu_list=menu_list)
 
 
 @app.route('/menu_update', methods=['POST', 'GET'])
@@ -115,6 +123,18 @@ def menu_delete():
         menu_registration_data = request.form
         database_cafe.delete_menu_item_database(menu_registration_data)
     return render_template('menu_delete.html')
+
+
+###----------------------------orders part-------------------###
+@app.route('/orders_create', methods=['POST', 'GET'])
+def orders_create():
+    order_list = database_cafe.read_menu_item_database('*')
+    if request.method == 'POST':
+        order_registration_data = request.form
+        for i in order_registration_data:
+            print(i[0])
+
+    return render_template('orders_create.html', order_list=order_list)
 
 
 ###----------------------------receipts part-----------------###
