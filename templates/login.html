@@ -12,10 +12,10 @@
     <div class="modal-content w-50 m-auto bg-light" id="login-modal" style="display: block">
 
 {#        <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">X</span>#}
-        <form class="form-group text-center p-3" style="height: 45vh">
+        <form class="form-group text-center p-3" action="{{ url_for('login') }}"method="post" style="height: 45vh">
             <h3>Login</h3><br>
-            <label for="uname"><b>Username</b></label>
-            <input class="input-group" id="uname" type="text" placeholder="Enter Username" name="uname" required>
+            <label for="phone"><b>phone</b></label>
+            <input class="input-group" id="phone" type="text" placeholder="Enter phone number" name="phone_number" required>
 
             <label for="psw"><b>Password</b></label>
             <input class="input-group" id="psw" type="text" placeholder="Enter Password" name="psw" required><br>

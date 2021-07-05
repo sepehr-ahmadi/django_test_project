@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d37b39c-af4e-4d0b-ab3d-761dc3ad5552" name="Default Changelist" comment="menu and tables cure was added">
-      <change afterPath="$PROJECT_DIR$/templates/orders_create.html" afterDir="false" />
+    <list default="true" id="5d37b39c-af4e-4d0b-ab3d-761dc3ad5552" name="Default Changelist" comment="login and register was added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_cafe.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_cafe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/menu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cafe_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cafe_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer_dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +140,7 @@
       <workItem from="1625388558776" duration="483000" />
       <workItem from="1625393650948" duration="13397000" />
       <workItem from="1625453010521" duration="4156000" />
-      <workItem from="1625498013720" duration="323000" />
+      <workItem from="1625498013720" duration="2895000" />
     </task>
     <task id="LOCAL-00001" summary="we edited base front-end template">
       <created>1624476073807</created>
@@ -262,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625387891200</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="login and register was added">
+      <created>1625498383117</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1625498383117</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,10 +295,11 @@
     <MESSAGE value="add table and other db curl to manage db file" />
     <MESSAGE value="modified database_cafe.py and add some new html file" />
     <MESSAGE value="menu and tables cure was added" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu and tables cure was added" />
+    <MESSAGE value="login and register was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="login and register was added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/cafe_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1625498154499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cafe_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1625500489190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cafe_project$cafe_project.coverage" NAME="cafe_project Coverage Results" MODIFIED="1624474066492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

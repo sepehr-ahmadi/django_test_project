@@ -66,7 +66,8 @@ def login():
         print((database_cafe.read_user_database(user_login_data)))
 
         if database_cafe.read_user_database(user_login_data) != []:
-            return redirect(url_for('customer_dashboard', userdata=database_cafe.read_user_database(user_login_data)))
+
+            return redirect(url_for('customer_dashboard'))
 
     return render_template("login.html")
 
