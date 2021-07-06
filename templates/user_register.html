@@ -1,5 +1,5 @@
 {% extends "cafe_base.html" %}
-{% block title %}home{% endblock %}
+{% block title %}register{% endblock %}
 {% block css %}
     <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
 {% endblock %}
@@ -37,17 +37,17 @@
                 <form class="form-group w-100" action="{{ url_for('user_register') }}" method="post">
                     <hr>
                     <label for="first_name">First name</label>
-                    <input type="text" id="first_name"  placeholder="first name" name="first_name" style="position: absolute; right: 2%;"><br>
+                    <input type="text" id="first_name" required placeholder="first name" name="first_name" style="position: absolute; right: 2%;"><br>
                     <label for="last_name">Last name</label>
-                    <input type="text" id="last_name"  placeholder="last name" name="last_name" style="position: absolute; right: 2%;"><br>
+                    <input type="text" id="last_name" required placeholder="last name" name="last_name" style="position: absolute; right: 2%;"><br>
                     <label for="phone_number">Phone number</label>
-                    <input type="tel" id="phone_number"  placeholder="phone number" name="phone_number" style="position: absolute; right: 2%;"><br>
+                    <input type="tel" id="phone_number" required placeholder="phone number" name="phone_number" style="position: absolute; right: 2%;"><br>
                     <label for="birthdate">Birthday</label>
-                    <input type="date" id="birthdate"  placeholder="birthday" name="birthday" style="position: absolute; right: 2%;"><br>
+                    <input type="date" id="birthdate" required placeholder="birthday" name="birthday" style="position: absolute; right: 2%;"><br>
                     <label for="email">Email</label>
-                    <input type="email" id="email"  placeholder="email" name="email" style="position: absolute; right: 2%;"><br>
+                    <input type="email" id="email"  required placeholder="email" name="email" style="position: absolute; right: 2%;"><br>
                     <label for="password">Password</label>
-                    <input type="text" id="password"  placeholder="password" name="password" style="position: absolute; right: 2%;"><br>
+                    <input type="text" id="password"  required placeholder="password" name="password" style="position: absolute; right: 2%;"><br>
 
                     <input class="btn btn-success btn-block  mt-3" type="submit" id="submitaiton" value="register">
                     <hr>
