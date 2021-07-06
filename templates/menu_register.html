@@ -1,7 +1,7 @@
 {% extends "cafe_base.html" %}
 {% block title %}home{% endblock %}
 {% block css %}
-    <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="menu_register.css") }}" rel="stylesheet">
 {% endblock %}
 {% block script %}
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -11,13 +11,15 @@
 {% endblock %}
 {% block content %}
 <form  action="{{ url_for('menu_register') }}" method="post">
-    <input type="text" id="name" size="40" placeholder="name" name="name"><br>
-    <input type="text" id="catagory" size="40" placeholder="catagory" name="catagory"><br>
-    <input type="text" id="discount" size="40" placeholder="discount" name="discount"><br>
-    <input type="text" id="delivering_time_period" size="40" placeholder="delivering time period" name="delivering_time_period"><br>
-    <input type="text" id="estimated_time_cooking" size="40" placeholder="estimated cooking time" name="estimated_cooking_time"><br>
-    <input type="text" id="price" size="40" placeholder="price" name="price"><br>
-<input type="submit" id="submitaiton" value="menu registration">
+     <fieldset>
+        <input type="text" id="name" size="40" placeholder="name" name="name"><br>
+        <input type="text" id="catagory" size="40" placeholder="catagory" name="catagory"><br>
+        <input type="text" id="discount" size="40" placeholder="discount" name="discount"><br>
+        <input type="text" id="delivering_time_period" size="40" placeholder="delivering time period" name="delivering_time_period"><br>
+        <input type="text" id="estimated_time_cooking" size="40" placeholder="estimated cooking time" name="estimated_cooking_time"><br>
+        <input type="text" id="price" size="40" placeholder="price" name="price"><br>
+        <input type="submit" id="submitaiton" value="menu registration">
+     </fieldset>
 </form>
 
 {% endblock %}
