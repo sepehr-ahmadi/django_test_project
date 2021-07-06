@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block content %}
-    <table  class="table-responsive" style="border: 1px solid black;">
+    <table  class="table-responsive  table table-hover" id=customers >
     <thead>
     <tr>
-    <td>ID</td>
-    <td>first name</td>
-    <td>last name</td>
-    <td>phone number</td>
-    <td>birth day </td>
-    <td>email</td>
+        <th>ID</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>phone number</th>
+        <th>birth day </th>
+        <th>email</th>
     </tr>
 
 
@@ -22,12 +22,12 @@
     <tbody>
 {% for row in list_users %}
     <tr>
-    <td>{{ row[0] }}</td>
-    <td>{{ row[1] }}</td>
-    <td>{{ row[2] }}</td>
-    <td>{{ row[3] }}</td>
-    <td>{{ row[4] }}</td>
-    <td>{{ row[6] }}</td>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[6] }}</td>
     </tr>
 {% endfor %}
     </tbody>
