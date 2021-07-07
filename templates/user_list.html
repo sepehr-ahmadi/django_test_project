@@ -6,42 +6,42 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid text-center" style="min-height:75vh ">
-<div class="row">
-    <div class="col pt-lg-4 m-auto">
-        <h4>list of registered users</h4>
-    </div>
-</div>
-<div class="row p-lg-3 m-auto">
-    <div class="col">
-    <table  class="table table-bordered" id="customers" >
-    <thead>
-    <tr>
-        <th class="text-center">ID</th>
-        <th class="text-center">first name</th>
-        <th class="text-center">last name</th>
-        <th class="text-center">phone number</th>
-        <th class="text-center">birth day </th>
-        <th class="text-center">email</th>
-    </tr>
+    <div class="container-fluid text-center" style="min-height:75vh ">
+        <div class="row">
+            <div class="col pt-lg-4 m-auto">
+                <h4>list of registered users</h4>
+            </div>
+        </div>
+        <div class="row p-lg-3 m-auto">
+            <div class="col">
+                <table class="table table-bordered" id="customers">
+                    <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">first name</th>
+                        <th class="text-center">last name</th>
+                        <th class="text-center">phone number</th>
+                        <th class="text-center">birth day</th>
+                        <th class="text-center">email</th>
+                    </tr>
 
 
-    </thead>
-    <tbody class="text-left">
-{% for row in list_users %}
-    <tr>
-        <td>{{ row[0] }}</td>
-        <td>{{ row[1] }}</td>
-        <td>{{ row[2] }}</td>
-        <td>{{ row[3] }}</td>
-        <td>{{ row[4] }}</td>
-        <td>{{ row[6] }}</td>
-    </tr>
-{% endfor %}
-    </tbody>
-    </table>
+                    </thead>
+                    <tbody class="text-left">
+                    {% for row in list_users %}
+                        <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[3] }}</td>
+                            <td>{{ row[4] }}</td>
+                            <td>{{ row[6] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 {% endblock %}
 

@@ -8,31 +8,42 @@
 
 
 {% block content %}
-   <table  class="table-responsive  table table-hover" id=customers >
-    <thead>
-    <tr>
-        <th>id</th>
-        <th> name</th>
-        <th>catagory</th>
-        <th>discount</th>
-        <th>delivering time period </th>
-        <th>estimated cooking time</th>
-        <th>price</th>
-    </tr>
+    <div class="container-fluid text-center" style="min-height:75vh ">
+        <div class="row pt-3">
+            <div class="col pt-lg-4 m-auto">
+                <h4>Main Menu</h4>
+            </div>
+        </div>
+        <div class="row p-lg-3 m-auto">
+            <div class="col">
+                <table class="table table-bordered" id=customers>
+                    <thead>
+                    <tr>
+                        <th class="text-center">id</th>
+                        <th class="text-center">name</th>
+                        <th class="text-center">catagory</th>
+                        <th class="text-center">discount</th>
+{#                        <th class="text-center">delivering time period</th>#}
+{#                        <th class="text-center">estimated cooking time</th>#}
+                        <th class="text-center">price</th>
+                    </tr>
 
 
-    </thead>
-    <tbody>
-{% for row in menu_list %}
-    <tr>
-        <td>{{ row[0] }}</td>
-        <td>{{ row[1] }}</td>
-        <td>{{ row[2] }}</td>
-        <td>{{ row[3] }}</td>
-        <td>{{ row[4] }}</td>
-        <td>{{ row[6] }}</td>
-    </tr>
-{% endfor %}
-    </tbody>
-    </table>
+                    </thead>
+                    <tbody>
+                    {% for row in menu_list %}
+                        <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+{#                            <td>{{ row[3] }}</td>#}
+{#                            <td>{{ row[4] }}</td>#}
+                            <td>{{ row[6] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}
