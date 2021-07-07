@@ -3,44 +3,42 @@
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for("static",filename="receipts.css") }}" rel="stylesheet">
+
 {% endblock %}
 
 {% block content %}
-<div class="container" >
-  <div  style="width: 100%;padding-top: 2%;" >
-        <div class="wapper bg-withe select-shadow radious">
+    <div class="container-fluid" style="min-height: 75vh">
+        <div class="row pt-2 text-center m-auto" id="modal-receipt">
+            <div class="modal-content bg-withe m-auto p-3">
 
-            <h1>Enter Receipt Details</h1>
-            <hr>
-
-            <form >
-
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date"  style="margin-left: 4.8%"><br><br>
-
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time" size="100"  style="margin-left: 4.8%"><br><br>
-
-                <label for="price">Price:</label>
-                <input type="number" id="price" name="price"  min="10000" max="100000" style="margin-left: 4.8%"><br><br>
-
-                <label for="tel">Phone:</label>
-                <input type="tel" id="tel" name="tel" style="margin-left: 4%"><br><br>
+                <h4 class="text-center">Enter Receipt Details</h4>
 
 
-                <label for="text1">Adress:</label>
-                <input type="text" id="text1" name="text" size="60" style="margin-left: 4%"><br><br>
+                <form class="form-group text-left pl-3 pr-3 pb-0" action="{{ url_for('receipts') }}" method="post">
+
+                    <label for="date">Date:</label><br>
+                    <input class="input-group" type="date" id="date" name="date" required>
+
+                    <label for="time">Time:</label><br>
+                    <input class="input-group" type="time" id="time" name="time" required>
+
+                    <label for="price">Price:</label><br>
+                    <input class="input-group" type="number" id="price" name="price" min="10000" max="100000" required>
+
+                    <label for="tel">Phone:</label><br>
+                    <input class="input-group" type="tel" id="tel" name="tel" required>
 
 
+                    <label for="text1">Adress:</label><br>
+                    <input class="input-group" type="text" id="text1" name="text" required>
+
+                    <input class="btn btn-block btn-success mt-2" type="submit" value="Make Recepits">
+                    <button class="btn btn-block btn-info mt-2" type="submit"><a href="{{ url_for('receipts_print') }}" style="color: white">Print Recepits</a></button>
+
+                </form>
 
 
-                <input type="submit" value="Make Recepits">
-                <hr>
-            </form>
-
-<p>Cafe receipt was issued to the customer.</p>
-
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
