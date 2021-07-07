@@ -6,47 +6,40 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row text-center pt-3 pl-5 pr-5" >
-        <h3 style=" color: black">Contact Us</h3>
 
 
-    </div>
-    <p style="padding-left: 20px">You can contact us using the form below. Please send us your comments and suggestions.</p>
-    <div  style="width: 100%;">
-        <div class="wapper bg-withe select-shadow radious">
+ <div class="container-fluid pt-1 text-center" style="min-height: 75vh;">
+        <div class="row text-left">
+
+            <div class="modal-content m-auto bg-light" id="user-modal" style="display: block">
+
+                <div class="wapper bg-withe select-shadow radious">
 
 
-            <h5>Enter the details to contact us</h5>
+            <center><h5>Enter the details to contact us</h5></center>
             <hr>
 
-            <form class="form-group" >
-                <label for="fname">First name:</label>
-                <input type="text" id="fname" name="fname" style="margin-left: 2%"><br><br>
+                <form class="form-group p-3" action="{{ url_for('user_register') }}" method="post">
 
-                <label for="email" >Email:</label>
-                <input type="email" id="email" name="email" style="margin-left: 5.5%"><br><br>
-
-                <label for="tel">Phone:</label>
-                <input type="tel" id="tel" name="tel" style="margin-left: 5%"><br><br>
-
-
-                <label for="textarea">message text:</label>
-                <textarea class="form-control" rows="4" id="textarea"></textarea><br>
-
-                <input class="btn btn-success" type="submit" value="send message" style="float: right"><br>
-                <hr>
-            </form>
+                    <label for="first_name">First name</label><br>
+                    <input class="input-group" type="text" id="first_name" required placeholder="first name" name="first_name">
+                    <label for="last_name">Last name</label><br>
+                    <input class="input-group" type="text" id="last_name" required placeholder="last name" name="last_name">
+                    <label for="phone_number">Phone number</label><br>
+                    <input class="input-group" type="tel" id="phone_number" required placeholder="phone number" name="phone_number">
+                    <label for="birthdate">Birthday</label><br>
+                    <input class="input-group" type="date" id="birthdate" required placeholder="birthday" name="birthday">
+                    <label for="email">Email</label><br>
+                    <input class="input-group" type="email" id="email"  required placeholder="email" name="email">
+                    <label for="password">Password</label><br>
+                    <input class="input-group" type="text" id="password"  required placeholder="password" name="password">
 
 
-
-
+                    <input class="btn btn-success btn-block  mt-1" type="submit" id="submitaiton" value="register">
+                </form>
+            </div>
         </div>
     </div>
 
-
-
-</div>
-    <br>
 {% endblock %}
 

@@ -10,12 +10,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('menu_delete') }}" id="content" method="post">
-     <fieldset>
 
-        <input type="number" id="id" size="40" placeholder="id" name="id"><br>
-        <input type="submit" id="submitaiton" value="delete">
-     </fieldset>
-</form>
+
+ <div class="container-fluid text-center pt-3" style="min-height:75vh ">
+        <div class="row">
+            <div class="col pt-lg-4 m-auto">
+                <h4>menu delete</h4>
+            </div>
+        </div>
+        <div class="row p-lg-3 m-auto" id="dl-user">
+            <div class="modal-content p-3">
+                <form action="{{ url_for('user_delete') }}" method="post">
+                    <label for="id">Item Id</label>
+                    <input class="input-group" type="number" id="id" placeholder="enter item id for delete" name="id">
+
+                    <input type="submit" id="submitaiton" value="delete" class="btn btn-block btn-danger mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
