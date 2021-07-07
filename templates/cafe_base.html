@@ -37,10 +37,10 @@
             <div class="col">
                 <nav>
                     <div id="myTopnav" class="topnav">
-                        <a href="{{ url_for('home') }}" id="home" class="btn active"><strong>HOME</strong></a>
-                        <a href="{{ url_for('about_us') }}" id="about" class="btn"><strong>ABOUT US</strong></a>
-                        <a href="{{ url_for('menu_list') }}" id="menu" class="btn"><strong>MENU</strong></a>
-                        <a href="{{ url_for('contact') }}" id="contact" class="btn"><strong>CONTACT US</strong></a>
+                        <a href="{{ url_for('home') }}" id="home" class="active"><strong>HOME</strong></a>
+                        <a href="{{ url_for('about_us') }}" id="about" ><strong>ABOUT US</strong></a>
+                        <a href="{{ url_for('menu_list') }}" id="menu" ><strong>MENU</strong></a>
+                        <a href="{{ url_for('contact') }}" id="contact" ><strong>CONTACT US</strong></a>
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                             <i class="fa fa-bars"></i>
                         </a>
@@ -80,33 +80,12 @@
         }
     }
 </script>
-{#<script>#}
-{##}
-{#    var header = document.getElementById("myTopnav");#}
-{#    var btns = header.getElementsByClassName("btn");#}
-{#    for (var i = 0; i < btns.length; i++) {#}
-{#        btns[i].addEventListener("click", function () {#}
-{#            var current = document.getElementsByClassName("active");#}
-{#            current[0].className = current[0].className.replace(" active", "");#}
-{#            this.className += " active";#}
-{#        });#}
-{#    }#}
-{#</script>#}
-{#<script>#}
-{#    window.onscroll = function () {#}
-{#        myFunction()#}
-{#    };#}
-{##}
-{#    var header = document.getElementById("myHeader");#}
-{#    var sticky = header.offsetTop;#}
-{##}
-{#    function myFunction() {#}
-{#        if (window.pageYOffset > sticky) {#}
-{#            header.classList.add("sticky");#}
-{#        } else {#}
-{#            header.classList.remove("sticky");#}
-{#        }#}
-{#    }#}
-{#</script>#}
+<script>
+$( '#myTopnav a' ).on( 'click', function () {
+	$( '#myTopnav' ).find( 'a.active' ).removeClass( 'active' );
+	$( this ).addClass( 'active' );
+});
+</script>
+
 </body>
 </html>
