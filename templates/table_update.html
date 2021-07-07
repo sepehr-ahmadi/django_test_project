@@ -10,10 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('table_update') }}" method="post">
-<input type="text" id="table_number" size="40" placeholder="table number" name="table_number"><br>
-    <input type="text" id="cofe_space_position" size="40" placeholder="cafe space position" name="cafe_space_position"><br>
-    <input type="submit" id="submitaiton" value="update" style="background-color: #0c5460;color: white;width: 8%">
-</form>
+ <div class="container-fluid pt-3" style="min-height: 75vh">
 
+     <h4 style="text-align: center; color: black; ">Update Table Info</h4>
+     <div class="modal-content m-auto bg-light" id="login-modal" style="display: block;">
+
+    <form class="input-group p-3" action="{{ url_for('table_update') }}" method="post">
+        <label for="table_number">Table Number</label><br>
+        <input class="input-group" type="text" id="table_number" size="40" placeholder="table number" name="table_number">
+
+        <label for="table_number">Cafe Space Position</label><br>
+        <input class="input-group" type="text" id="cofe_space_position" size="40" placeholder="cafe space position" name="cafe_space_position">
+
+        <input type="submit" id="submitaiton" value="update" class="btn btn-success btn-block mt-2">
+    </form>
+     </div>
+ </div>
 {% endblock %}
