@@ -6,20 +6,28 @@
 {% endblock %}
 
 {% block content %}
-    <table  class="table-responsive  table table-hover" id="customers" >
+<div class="container-fluid text-center" style="min-height:75vh ">
+<div class="row">
+    <div class="col pt-lg-4 m-auto">
+        <h4>list of registered users</h4>
+    </div>
+</div>
+<div class="row p-lg-3 m-auto">
+    <div class="col">
+    <table  class="table table-bordered" id="customers" >
     <thead>
     <tr>
-        <th>ID</th>
-        <th>first name</th>
-        <th>last name</th>
-        <th>phone number</th>
-        <th>birth day </th>
-        <th>email</th>
+        <th class="text-center">ID</th>
+        <th class="text-center">first name</th>
+        <th class="text-center">last name</th>
+        <th class="text-center">phone number</th>
+        <th class="text-center">birth day </th>
+        <th class="text-center">email</th>
     </tr>
 
 
     </thead>
-    <tbody>
+    <tbody class="text-left">
 {% for row in list_users %}
     <tr>
         <td>{{ row[0] }}</td>
@@ -32,5 +40,8 @@
 {% endfor %}
     </tbody>
     </table>
+    </div>
+</div>
+</div>
 {% endblock %}
 
