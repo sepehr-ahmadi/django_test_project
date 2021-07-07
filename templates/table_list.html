@@ -2,36 +2,38 @@
 {% block title %}table list{% endblock %}
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ url_for("static",filename="table.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="table_list.css") }}" rel="stylesheet">
 {% endblock %}
 {% block content %}
-
-
-    <div class="container-fluid" style="box-shadow: #1d2124 inset;padding-top: 3rem;padding-left: 8rem">
-
-        <div style="max-width:800px; border: #1b1e21 wave;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #f5f1f1">
-<table>
-            <thead>
-            <tr>
-                <td>table number</td>
-                <td>table location</td>
-            </tr>
-
-
-            </thead>
-            <tbody>
-            {% for row in table_list %}
-                <tr>
-                    <td>{{ row[1] }}</td>
-                    <td>{{ row[2] }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-</table>
+    <div class="container-fluid text-center pt-2" style="min-height:75vh ">
+    <div class="row">
+        <div class="col pt-lg-4 m-auto">
+            <h4>Tables in the cafe</h4>
         </div>
-
-
     </div>
+    <div class="row p-lg-3 m-auto">
+        <div class="col modal-content">
 
+            <table table class="table table-bordered" id="tables">
+                <thead class="text-white font-weight-bold" style="background-color: #48c964">
+                <tr>
+                    <td>table number</td>
+                    <td>table location</td>
+                </tr>
+
+
+                </thead>
+                <tbody>
+                {% for row in table_list %}
+                    <tr>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

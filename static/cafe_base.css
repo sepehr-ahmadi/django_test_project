@@ -24,7 +24,7 @@ header {
     padding: 15px 20px;
     align-items: center;
     background-color: #de9c0f;
-    height: 14vh;
+    /*height: 14vh;*/
 }
 #footer {
     position: sticky;
@@ -36,7 +36,7 @@ header {
     padding: 15px 20px;
     /*align-items: center;*/
     background-color: #de9c0f;
-    height: 12.5vh;
+    min-height: 12.5vh;
 }
 
 .topnav {
