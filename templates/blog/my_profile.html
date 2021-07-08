@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="my_profile.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>
+    </title>
+</head>
+<body>
+<div class="row">
+    <div class="column" style='width: 25%; background-color: mediumblue;'>
+        <div class="box" style="  align-items: center;justify-content: center; margin:0%;">
+            {% load static %}
+            <img class="profile_image" src="{% static 'img/Capture.PNG' %}" style="vertical-align: center; border-radius: 50%" >
+        </div>
+
+        <h1 class="box">sepher ahmadi</h1>
+        <h2 class="box">python developer</h2>
+        <div style="text-align: center">
+            <a class="fa fa-facebook" href="#" style="display:inline;"></a>
+            <a class="fa fa-twitter" href="#" style="display:inline;"></a>
+            <a class="fa fa-google" href="#" style="display:inline;"></a>
+            <a class="fa fa-linkedin" href="#" style="display:inline;"></a>
+            <a class="fa fa-youtube" href="#" style="display:inline;"></a>
+        </div>
+        <h3 class="box">about me</h3>
+        <h3 class="box">experience</h3>
+        <h3 class="box">education</h3>
+
+    </div>
+    <div class="column" style='width: 75%;'>
+        <div style="padding-left:10%;padding-right: 10%">
+            <h1 style="display:inline;color:rgba(167,43,90,0.81)">about me</h1>
+            <button style="display:inline;float:right;margin-top:1rem;color:white;background-color: mediumblue">Download
+                Resume
+            </button>
+            <p>Hello, my name is sepehr ahmadi,I am a talented, ambitious and hardworking individual, with broad skills
+                and experience in digital and printed marketing, social media and leading projects. Furthermore, I am
+                adept at handling multiple tasks on a daily basis competently and at working well under pressure. A key
+                strength is communication; building strong relationships with people in order to deliver the best
+                results.Recently, I completed an Open degree, including Business and Design modules at the Open
+                University and I am now fully employed by Clearly Presented as a Digital Media Manager.</p>
+            <br>
+            <br>
+            <h3>birthday:1989.08.10</h3>
+            <h3>location:tehran,iran</h3>
+            <h3>email:sepehr_3858@yahoo.com</h3>
+            <h3>phone:-------------</h3>
+            <div class="row">
+                <div class="column" style='width: 50%;'><p style="margin:0;display:inline;float:left">design pattern</p>
+                    <p style="margin-right:5%;margin-top: 0;display:inline;float:right">50%</p></div>
+                <div class="column" style='width: 50%;'><p style="margin-left:5%;margin-top: 0;display:inline;float:left">django</p>
+                    <p style="margin:0;display:inline;float:right">10%</p></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>
