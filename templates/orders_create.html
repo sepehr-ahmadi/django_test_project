@@ -19,7 +19,7 @@
             <div class="col modal-content">
 
             <form class="form-group" action="{{ url_for('orders_create') }}" method="post">
-                <table class="table table-responsive table-bordered" >
+                <table class="table table-bordered" >
                     <thead class="text-white font-weight-bold" style="background-color: #48c964">
                     <tr>
                         <td>name</td>
@@ -43,12 +43,12 @@
                             <td>{{ row[4] }}</td>
                             <td>{{ row[4] }}</td>
                             <td>{{ row[6] }}</td>
-                            <td><input type="text" id={{ row[0] }} placeholder="num" name={{ row[0] }}></td>
+                            <td><input type="text" id={{ row[0] }} placeholder="number" name={{ row[0] }}></td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
-                <label for="table-num" style="text-align: left">Table Number</label>
+                <label for="table-num" class="text-left">Table Number</label>
                 <input type="text" name="table-number" id="table-num" class="input-group text-left" placeholder="enter your table number">
                 <input class="btn btn-block btn-success mt-2" type="submit" id="submitaiton" value="submit order">
             </form>
