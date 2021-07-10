@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+{% if latest_orders_list %}
+    <table class="table">
+        <thead>
+        <td>
+            <p> order id</p>
+        </td>
+        <td>
+            <p> status</p>
+        </td>
+        <td>
+            number
+        </td>
+        </thead>
+        {% for order in latest_orders_list %}
+            <tr>
+                <td><a href="/cafe/{{ order.id }}/">{{ order.id }}</a></td>
+                <td><a href="/cafe/{{ order.id }}/">{{ order.status }}</a></td>
+                <td><a href="/cafe/{{ order.id }}/">{{ order.number }}</a></td>
+            </tr>
+
+        {% endfor %}
+    </table>
+{% endif %}
+
+</body>
+</html>
