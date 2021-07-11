@@ -140,8 +140,8 @@ def read_menu_item_database(menu_item_data):
 def create_orders_database(orderdata):
     cur = conn.cursor()
     cur.execute(
-        """Insert into orders(id,status,number,menu_item_id,table_id,time_stamp) VALUES (%s,%s,%s,%s,%s,%s);""",
-        (orderdata['id'], orderdata['status'], orderdata['number'], orderdata['menu_item_id'],
+        """Insert into orders(status,number,menu_item_id,table_id,time_stamp) VALUES (%s,%s,%s,%s,%s);""",
+        (orderdata['status'], orderdata['number'], orderdata['menu_item_id'],
          orderdata['table_id'],
          orderdata['time_stamp']))
     conn.commit()

@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask, render_template, request, redirect, url_for
 import requests
 import psycopg2
@@ -66,7 +68,6 @@ def login():
         print((database_cafe.read_user_database(user_login_data)))
 
         if database_cafe.read_user_database(user_login_data) != []:
-
             return redirect(url_for('customer_dashboard'))
 
     return render_template("login.html")
@@ -75,7 +76,7 @@ def login():
 @app.route("/customer_dashboard")
 def customer_dashboard():
     # return render_template("customer_dashboard.html",userdata=request.args.get('userdata'))
-    return render_template("customer_dashboard.html",userdata=request.args.get('userdata'))
+    return render_template("customer_dashboard.html", userdata=request.args.get('userdata'))
 
 
 @app.route("/cashier_dashboard")
@@ -131,17 +132,28 @@ def menu_delete():
 def orders_create():
     order_list = database_cafe.read_menu_item_database('*')
     if request.method == 'POST':
-        order_registration_data = request.form
-        for i in order_registration_data:
-            print(i[0])
-
+        order_registration_data_table_number = request.form.getlist('table_number')
+        order_registration_data_id = request.form.getlist('id')
+        order_registration_data_number = request.form.getlist('number')
+        for i in range(len(order_registration_data_id)):
+            order_create_data = {}
+            if order_registration_data_number[i] != None:
+                order_create_data['status'] = 'on process'
+                order_create_data['number'] = order_registration_data_number[i]
+                order_create_data['menu_item_id'] = order_registration_data_id[i]
+                order_create_data['table_id'] = int(order_registration_data_table_number[0])
+                order_create_data['time_stamp'] = datetime.now()
+                database_cafe.create_orders_database(order_create_data)
     return render_template('orders_create.html', order_list=order_list)
 
 
 ###----------------------------receipts part-----------------###
-@app.route("/receipts")
+@app.route("/receipts", methods=['GET', 'POST'])
 def receipts():
-    return render_template('receipts.html')
+    if request.method == 'POST':
+        receipts_data = database_cafe.read_receipts_database()
+
+    return render_template('receipts_request.html')
 
 
 @app.route("/receipts_print")
