@@ -195,4 +195,4 @@ def table_delete():
 
 
 if __name__ == '__main__':
-    pass
+    app.run(port=5001)

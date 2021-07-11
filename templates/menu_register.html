@@ -1,23 +1,40 @@
 {% extends "cafe_base.html" %}
-{% block title %}home{% endblock %}
+{% block title %}menu register{% endblock %}
 {% block css %}
-    <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="menu_register.css") }}" rel="stylesheet">
 {% endblock %}
 {% block script %}
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('menu_register') }}" method="post">
-    <input type="text" id="name" size="40" placeholder="name" name="name"><br>
-    <input type="text" id="catagory" size="40" placeholder="catagory" name="catagory"><br>
-    <input type="text" id="discount" size="40" placeholder="discount" name="discount"><br>
-    <input type="text" id="delivering_time_period" size="40" placeholder="delivering time period" name="delivering_time_period"><br>
-    <input type="text" id="estimated_time_cooking" size="40" placeholder="estimated cooking time" name="estimated_cooking_time"><br>
-    <input type="text" id="price" size="40" placeholder="price" name="price"><br>
-<input type="submit" id="submitaiton" value="menu registration">
-</form>
+    <div class="container-fluid mt-2" style=" min-height: 75vh">
+
+
+        <div class="modal-content  m-auto bg-light p-3 text-center" id="register-modal" style="display: block;">
+            <h4>Register Menu Item</h4><br>
+            <form class="form-group text-left m-auto pl-3 pr-3 pb-3" action="{{ url_for('menu_register') }}" method="post">
+                <label for="name">name</label><br>
+                <input class="input-group" type="text" id="name" placeholder="name" name="name" required>
+                <label for="catagory">category</label><br>
+                <input class="input-group" type="text" id="catagory" placeholder="catagory" name="catagory" required>
+                <label for="discount">discount(%)</label><br>
+                <input class="input-group" type="text" id="discount" placeholder="discount" name="discount" required>
+                <label for="delivering_time_period">delivering time period</label><br>
+                <input class="input-group" type="text" id="delivering_time_period" placeholder="delivering time period"
+                       name="delivering_time_period" required>
+                <label for="estimated_time_cooking">estimated cooking time</label><br>
+                <input class="input-group" type="text" id="estimated_time_cooking" placeholder="estimated cooking time"
+                       name="estimated_cooking_time" required>
+                <label for="price">price</label><br>
+                <input class="input-group" type="text" id="price" placeholder="price" name="price" required>
+                <input type="submit" id="submitaiton" class="btn btn-block btn-success mt-2" value="menu registration">
+
+            </form>
+        </div>
+
+    </div>
 
 {% endblock %}

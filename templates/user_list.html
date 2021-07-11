@@ -1,36 +1,47 @@
 {% extends "cafe_base.html" %}
-{% block title %}Contact{% endblock %}
+{% block title %}users list{% endblock %}
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for("static",filename="user.css") }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <table  class="table-responsive" style="border: 1px solid black;">
-    <thead>
-    <tr>
-    <td>ID</td>
-    <td>first name</td>
-    <td>last name</td>
-    <td>phone number</td>
-    <td>birth day </td>
-    <td>email</td>
-    </tr>
+    <div class="container-fluid text-center" style="min-height:75vh ">
+        <div class="row">
+            <div class="col pt-lg-4 m-auto">
+                <h4>list of registered users</h4>
+            </div>
+        </div>
+        <div class="row p-lg-3 m-auto">
+            <div class="col">
+                <table class="table table-bordered" id="customers">
+                    <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">first name</th>
+                        <th class="text-center">last name</th>
+                        <th class="text-center">phone number</th>
+                        <th class="text-center">birth day</th>
+                        <th class="text-center">email</th>
+                    </tr>
 
 
-    </thead>
-    <tbody>
-{% for row in list_users %}
-    <tr>
-    <td>{{ row[0] }}</td>
-    <td>{{ row[1] }}</td>
-    <td>{{ row[2] }}</td>
-    <td>{{ row[3] }}</td>
-    <td>{{ row[4] }}</td>
-    <td>{{ row[6] }}</td>
-    </tr>
-{% endfor %}
-    </tbody>
-    </table>
+                    </thead>
+                    <tbody class="text-left">
+                    {% for row in list_users %}
+                        <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[3] }}</td>
+                            <td>{{ row[4] }}</td>
+                            <td>{{ row[6] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 

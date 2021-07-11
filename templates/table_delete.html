@@ -1,7 +1,7 @@
 {% extends "cafe_base.html" %}
-{% block title %}home{% endblock %}
+{% block title %}table delete{% endblock %}
 {% block css %}
-    <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="table_delete.css") }}" rel="stylesheet">
 {% endblock %}
 {% block script %}
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,9 +10,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('table_delete') }}" method="post">
-    <input type="text" id="table_number" size="40" placeholder="table number" name="table_number"><br>
-<input type="submit" id="submitaiton" value="delete">
-</form>
+ <div class="container-fluid pt-3" style="min-height: 75vh">
 
+     <h4 style="text-align: center; color: black; ">Update Table Info</h4>
+     <div class="modal-content m-auto bg-light" id="login-modal" style="display: block;">
+
+    <form class="input-group p-3"  action="{{ url_for('table_delete') }}" method="post">
+
+        <label for="table_number">Table Number</label><br>
+        <input class="input-group" type="text" id="table_number" size="40" placeholder="table number" name="table_number">
+
+        <input type="submit" id="submitaiton" value="delete" class="btn btn-success btn-block mt-2">
+
+    </form>
+     </div>
+ </div>
 {% endblock %}

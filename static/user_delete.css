@@ -1,13 +1,26 @@
 @media (min-width: 640px) {
-    #modal-receipt {
+    #dl-user {
 
         max-width: 50vw;
     }
 }
 
 @media (max-width: 640px) {
-    #modal-receipt {
+    #dl-user {
         max-width: 80vw;
     }
 }
+
+
+
+
+.content {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 

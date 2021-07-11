@@ -1,31 +1,48 @@
 {% extends "cafe_base.html" %}
 {% block title %}login{% endblock %}
 {% block css %}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @media (min-width: 640px) {
+            #login-modal {
+
+                max-width: 50vw;
+            }
+        }
+
+        @media (max-width: 640px) {
+            #login-modal {
+                max-width: 80vw;
+            }
+        }
+    </style>
 {% endblock %}
 {% block content %}
-<div class="container-fluid" style="height: 75vh">
+    <div class="container-fluid" style="min-height: 75vh">
 
-  <h2 style="text-align: center; color: black; padding: 1rem;">welcom to cafe 5</h2>
+        <h4 style="text-align: center; color: black; padding: 1rem;">welcom to cafe 5</h4>
 
 
-    <div class="modal-content w-50 m-auto bg-light" id="login-modal" style="display: block">
+        <div class="modal-content m-auto bg-light" id="login-modal"
+             style="display: block;">
 
-{#        <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">X</span>#}
-        <form class="form-group text-center p-3" action="{{ url_for('login') }}"method="post" style="height: 45vh">
-            <h3>Login</h3><br>
-            <label for="phone"><b>phone</b></label>
-            <input class="input-group" id="phone" type="text" placeholder="Enter phone number" name="phone_number" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input class="input-group" id="psw" type="text" placeholder="Enter Password" name="psw" required><br>
-            <button type="submit" class="btn btn-success btn-block">Login</button>
-            <button type="" class="btn btn-danger btn-block">Cancel</button>
+            <form class="form-group text-left p-3" action="{{ url_for('login') }}" method="post"
+                  style="min-height: 45vh">
+                <h4 style="text-align: center">Login</h4><br>
+                <label for="phone"><b>phone</b></label>
+                <input class="input-group" id="phone" type="text" placeholder="Enter phone number" name="phone_number">
 
-        </form>
+                <label for="psw"><b>Password</b></label>
+                <input class="input-group" id="psw" type="text" placeholder="Enter Password" name="psw">
+                <button type="submit" class="btn btn-success btn-block mt-2">Login</button>
+                <button type="reset" class="btn btn-danger btn-block">Cancel</button>
 
+
+            </form>
+
+
+        </div>
 
     </div>
-
-</div>
 {% endblock %}

@@ -1,34 +1,62 @@
 {% extends "cafe_base.html" %}
-{% block title %}dashboard{% endblock %}
+{% block title %}cashier dashboard{% endblock %}
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-3">
-            <div class="vh-100" id="side-panel">
-                <button class="btn-block">Dashboard</button>
+        <div class="col-3 p-lg-5" style="height: 75vh">
+            <div class="panel text-center " id="side-panel">
+                <button class="btn btn-block btn-secondary mb-2">Dashboard</button>
                 <div class="card">
-                    <div class="card-header">
-                        <a class="card-link" data-toggle="collapse" href="#orders">
-                            Orders
+                    <div class="card-header m-0 p-0">
+                        <a class="card-link " data-toggle="collapse" href="#orders"><button class="btn btn-block btn-secondary">
+                            Orders</button>
                         </a>
                     </div>
-                    <div id="orders" class="collapse" data-parent="#side-panel">
-                        <div class="card-body">
-                            <button href="#">New orders</button>
-                            <a href="#">Cooking orders</a>
-                            <a href="#">Served orders</a>
-                            <a href="#">Deleted orders</a>
-                            <a href="#">Paid orders</a>
-                            <a href="#">Archive</a>
+                    <div id="orders" class="collapse " data-parent="#side-panel">
+                        <div class="list-group-item">
+                            <button class="btn btn-block btn-light"><a href="#">New orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Cooking orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Served orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Deleted orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Paid orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Archive</a></button>
                         </div>
                     </div>
                 </div>
-                <button class="btn-block">Tables</button>
-                <button class="btn-block">Menu Items</button>
-                <button class="btn-block">Receipts</button>
+                <button class="btn btn-block btn-secondary mb-2 mt-2">Tables</button>
+                <div class="card">
+                    <div class="card-header m-0 p-0">
+                        <a class="card-link " data-toggle="collapse" href="#menu-items"><button class="btn btn-block btn-secondary">Menu Items</button>
+                        </a>
+                    </div>
+                    <div id="menu-items" class="collapse " data-parent="#side-panel">
+                        <div class="list-group-item">
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('menu_register') }}">Add Items</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('menu_update') }}">Edit Items</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('menu_delete') }}">Delete Items</a></button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header m-0 p-0">
+                        <a class="card-link " data-toggle="collapse" href="#receipts"><button class="btn btn-block btn-secondary mt-2">Receipts</button>
+                        </a>
+                    </div>
+                    <div id="receipts" class="collapse " data-parent="#side-panel">
+                        <div class="list-group-item">
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('receipts') }}">Receipt</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Paid Receipts</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Archive</a></button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-9 bg-secondary">
@@ -36,4 +64,4 @@
         </div>
     </div>
 </div>
-{% block content %}
+{% endblock %}

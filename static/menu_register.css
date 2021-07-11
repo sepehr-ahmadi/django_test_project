@@ -1,13 +1,11 @@
 @media (min-width: 640px) {
-    #modal-receipt {
+    #register-modal {
 
         max-width: 50vw;
     }
 }
-
 @media (max-width: 640px) {
-    #modal-receipt {
+    #register-modal {
         max-width: 80vw;
     }
 }
-

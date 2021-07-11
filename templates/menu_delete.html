@@ -1,7 +1,7 @@
 {% extends "cafe_base.html" %}
-{% block title %}home{% endblock %}
+{% block title %}menu delete{% endblock %}
 {% block css %}
-    <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="menu_delete.css") }}" rel="stylesheet">
 {% endblock %}
 {% block script %}
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,9 +10,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('menu_delete') }}" method="post">
-    <input type="text" id="id" size="40" placeholder="id" name="id"><br>
-<input type="submit" id="submitaiton" value="delete">
-</form>
+
+
+ <div class="container-fluid text-center pt-3" style="min-height:75vh ">
+        <div class="row">
+            <div class="col pt-lg-4 m-auto">
+                <h4>menu delete</h4>
+            </div>
+        </div>
+        <div class="row p-lg-3 m-auto" id="dl-user">
+            <div class="modal-content p-3">
+                <form action="{{ url_for('user_delete') }}" method="post">
+                    <label for="id">Item Id</label>
+                    <input class="input-group" type="number" id="id" placeholder="enter item id for delete" name="id">
+
+                    <input type="submit" id="submitaiton" value="delete" class="btn btn-block btn-danger mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

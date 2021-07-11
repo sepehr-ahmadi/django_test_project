@@ -1,7 +1,7 @@
 {% extends "cafe_base.html" %}
-{% block title %}home{% endblock %}
+{% block title %}menu update{% endblock %}
 {% block css %}
-    <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="menu_update.css") }}" rel="stylesheet">
 {% endblock %}
 {% block script %}
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,15 +10,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form class="form-group" action="{{ url_for('menu_update') }}" method="post">
-    <input type="text" id="id" size="40" placeholder="id" name="id"><br>
-    <input type="text" id="name" size="40" placeholder="name" name="name"><br>
-    <input type="text" id="catagory" size="40" placeholder="catagory" name="catagory"><br>
-    <input type="text" id="discount" size="40" placeholder="discount" name="discount"><br>
-    <input type="text" id="delivering_time_period" size="40" placeholder="delivering time period" name="delivering_time_period"><br>
-    <input type="text" id="estimated_time_cooking" size="40" placeholder="estimated cooking time" name="estimated_cooking_time"><br>
-    <input type="text" id="price" size="40" placeholder="price" name="price"><br>
-<input type="submit" id="submitaiton" value="update">
+
+ <div class="container-fluid pt-3" style="min-height: 75vh">
+
+    <h4 style="text-align: center; color: black; ">Update Menu Info</h4>
+
+
+    <div class="modal-content m-auto bg-light" id="login-modal"
+         style="display: block;">
+
+<form class="form-group p-3" action="{{ url_for('menu_update') }}" method="post">
+    <label for="id">Item ID</label><br>
+    <input class="input-group" type="number" id="id" size="40" placeholder="id" name="id" >
+
+    <label for="name">first name</label><br>
+    <input class="input-group" type="text" id="name" size="40" placeholder="name" name="name">
+
+    <label for="catagory">first name</label><br>
+    <input class="input-group" type="text" id="catagory" size="40" placeholder="catagory" name="catagory">
+
+    <label for="discount">first name</label><br>
+    <input class="input-group" type="text" id="discount" size="40" placeholder="discount" name="discount">
+
+    <label for="delivering_time_period">first name</label>
+    <input class="input-group" type="text" id="delivering_time_period" size="40" placeholder="delivering time period" name="delivering_time_period">
+
+    <label for="estimated_time_cooking">first name</label><br>
+    <input class="input-group" type="text" id="estimated_time_cooking" size="40" placeholder="estimated cooking time" name="estimated_cooking_time">
+
+    <label for="price">first name</label><br>
+    <input class="input-group" type="text" id="price" size="40" placeholder="price" name="price">
+
+<input type="submit" id="submitaiton" value="update"  class="btn btn-success btn-block mt-2">
 </form>
+</div>
+ </div>
 
 {% endblock %}

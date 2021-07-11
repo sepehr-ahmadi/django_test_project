@@ -1,7 +1,7 @@
 {% extends "cafe_base.html" %}
-{% block title %}home{% endblock %}
+{% block title %}table register{% endblock %}
 {% block css %}
-    <link href="{{ url_for("static",filename="home.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="table_register.css") }}" rel="stylesheet">
 {% endblock %}
 {% block script %}
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,11 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
-<form  action="{{ url_for('table_register') }}" method="post">
-    <input type="text" id="table_number" size="40" placeholder="table number" name="table_number"><br>
-    <input type="text" id="coffe_space_position" size="40" placeholder="cafe space position" name="cafe_space_position"><br>
+ <div class="container-fluid pt-3" style="min-height: 75vh">
 
-<input type="submit" id="submitaiton" value="table registration">
-</form>
+     <h4 style="text-align: center; color: black; ">Register Table Info</h4>
+     <div class="modal-content m-auto bg-light" id="login-modal" style="display: block;">
 
+     <form class="form-group p-3" action="{{ url_for('table_register') }}" method="post">
+         <label for="table_number">Table Number</label><br>
+         <input class="input-group" type="text" id="table_number" size="40" placeholder="table number" name="table_number">
+
+         <label for="cafe_s">Cafe Space Position</label><br>
+         <input class="input-group" type="text" id="cafe_s" size="40" placeholder="cafe space position" name="cafe_space_position" >
+
+        <input type="submit" id="submitaiton" value="table registration" class="btn btn-success btn-block mt-2">
+
+     </form>
+ </div>
+ </div>
 {% endblock %}
