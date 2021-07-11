@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d37b39c-af4e-4d0b-ab3d-761dc3ad5552" name="Default Changelist" comment="login and register was added">
+    <list default="true" id="5d37b39c-af4e-4d0b-ab3d-761dc3ad5552" name="Default Changelist" comment="ordering was added">
+      <change beforePath="$PROJECT_DIR$/.idea/cafe_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cafe_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_cafe.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_cafe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cafe_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cafe_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders_create.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +151,7 @@
       <workItem from="1625934204192" duration="18000" />
       <workItem from="1625934826752" duration="727000" />
       <workItem from="1625963400762" duration="4834000" />
-      <workItem from="1626018539962" duration="9787000" />
+      <workItem from="1626018539962" duration="15557000" />
     </task>
     <task id="LOCAL-00001" summary="we edited base front-end template">
       <created>1624476073807</created>
@@ -273,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625498383117</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ordering was added">
+      <created>1626034757967</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1626034757967</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,10 +314,11 @@
     <MESSAGE value="modified database_cafe.py and add some new html file" />
     <MESSAGE value="menu and tables cure was added" />
     <MESSAGE value="login and register was added" />
-    <option name="LAST_COMMIT_MESSAGE" value="login and register was added" />
+    <MESSAGE value="ordering was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ordering was added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/cafe_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1626032436124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cafe_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1626040846505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cafe_project$cafe_project.coverage" NAME="cafe_project Coverage Results" MODIFIED="1624474066492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

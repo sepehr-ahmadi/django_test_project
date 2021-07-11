@@ -6,12 +6,14 @@
     <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for("static",filename="cafe_base.css") }}" rel="stylesheet">
-{#    <link href="{{ url_for("static",filename="bootstrap.min.css") }}" rel="stylesheet">#}
+    {#    <link href="{{ url_for("static",filename="bootstrap.min.css") }}" rel="stylesheet">#}
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
     {% block css %}
     {% endblock %}
@@ -38,13 +40,13 @@
             <div class="col">
                 <nav>
                     <div id="myTopnav" class="topnav">
-                        <a href="{{ url_for('home') }}" id="home" class="active"><strong>HOME</strong></a>
-                        <a href="{{ url_for('about_us') }}" id="about" ><strong>ABOUT US</strong></a>
-                        <a href="{{ url_for('menu_list') }}" id="menu" ><strong>MENU</strong></a>
-                        <a href="{{ url_for('contact') }}" id="contact" ><strong>CONTACT US</strong></a>
-                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                            <i class="fa fa-bars"></i>
-                        </a>
+                        <a href="{{ url_for('home') }}" id="home" class=""><strong>HOME</strong></a>
+                        <a href="{{ url_for('about_us') }}" id="about_us" class=""><strong>ABOUT US</strong></a>
+                        <a href="{{ url_for('menu_list') }}" id="menu_list" class=""><strong>MENU</strong></a>
+                        <a href="{{ url_for('contact') }}" id="contact" class=""><strong>CONTACT US</strong></a>
+                        {#                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">#}
+                        {#                            <i class="fa fa-bars"></i>#}
+                        {#                        </a>#}
                     </div>
                 </nav>
             </div>
@@ -82,11 +84,24 @@
     }
 </script>
 <script>
-$( '#myTopnav a' ).on( 'click', function () {
-	$( '#myTopnav' ).find( 'a.active' ).removeClass( 'active' );
-	$( this ).addClass( 'active' );
-});
-</script>
+    $(document).ready(function () {
+        console.log("ready")
+        $(document).on("click", "a", function () {
+            $('.topnav a').removeClass('active');
+            $(this).addClass("active");
+        });
+        {#$('#myTopnav a').on('click','a', function () {#}
+        {#    console.log("in");#}
+        {#    $('#myTopnav').find('a.active').removeClass('active');#}
+        {#    $("#{{request.endpoint}}").addClass("active");#}
+        {#    $(this).addClass('active');#}
+        {# });#}
+    });
 
+</script>
+<script>
+$(document).ready(function () {
+$("#{{request.endpoint}}").addClass("active"); })
+</script>
 </body>
 </html>
