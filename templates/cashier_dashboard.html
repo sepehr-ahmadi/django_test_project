@@ -1,15 +1,37 @@
-{% extends "cafe_base.html" %}
-{% block title %}cashier dashboard{% endblock %}
+{% extends "dashboard_base.html" %}
+{% block title %}dashboard{% endblock %}
 {% block css %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock %}
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3 p-lg-5" style="height: 75vh">
+        <div class="col-3 p-2" style="min-height: 85vh">
             <div class="panel text-center " id="side-panel">
-                <button class="btn btn-block btn-secondary mb-2">Dashboard</button>
                 <div class="card">
+                    <div class="card-header m-0 p-0">
+                        <a class="card-link " data-toggle="collapse" href="{{ url_for('cashier_dashboard') }}"><button class="btn btn-block btn-secondary">Dashboard</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card mt-2 ">
+                    <div class="card-header m-0 p-0">
+                        <a class="card-link " data-toggle="collapse" href="#users"><button class="btn btn-block btn-secondary">
+                            Users</button>
+                        </a>
+                    </div>
+                    <div id="users" class="collapse " data-parent="#side-panel">
+                        <div class="list-group-item">
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('user_list') }}">All Users</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('user_register') }}">Add User</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('user_update') }}">Edit User</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('user_delete') }}">Delete User</a></button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2 ">
                     <div class="card-header m-0 p-0">
                         <a class="card-link " data-toggle="collapse" href="#orders"><button class="btn btn-block btn-secondary">
                             Orders</button>
@@ -17,23 +39,39 @@
                     </div>
                     <div id="orders" class="collapse " data-parent="#side-panel">
                         <div class="list-group-item">
-                            <button class="btn btn-block btn-light"><a href="#">New orders</a></button>
-                            <button class="btn btn-block btn-light"><a href="#">Cooking orders</a></button>
-                            <button class="btn btn-block btn-light"><a href="#">Served orders</a></button>
-                            <button class="btn btn-block btn-light"><a href="#">Deleted orders</a></button>
-                            <button class="btn btn-block btn-light"><a href="#">Paid orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">New Orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Cooking Orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Served Orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Deleted Orders</a></button>
+                            <button class="btn btn-block btn-light"><a href="#">Paid Orders</a></button>
                             <button class="btn btn-block btn-light"><a href="#">Archive</a></button>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-block btn-secondary mb-2 mt-2">Tables</button>
-                <div class="card">
+
+                <div class="card mt-2 ">
+                    <div class="card-header m-0 p-0">
+                        <a class="card-link " data-toggle="collapse" href="#tables"><button class="btn btn-block btn-secondary">Tables</button>
+                        </a>
+                    </div>
+                    <div id="tables" class="collapse " data-parent="#side-panel">
+                        <div class="list-group-item">
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('table_list') }}">All Table</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('table_register') }}">Add Table</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('table_update') }}">Edit Table</a></button>
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('table_delete') }}">Delete Table</a></button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2 ">
                     <div class="card-header m-0 p-0">
                         <a class="card-link " data-toggle="collapse" href="#menu-items"><button class="btn btn-block btn-secondary">Menu Items</button>
                         </a>
                     </div>
                     <div id="menu-items" class="collapse " data-parent="#side-panel">
                         <div class="list-group-item">
+                            <button class="btn btn-block btn-light"><a href="{{ url_for('menu_list') }}">All Items</a></button>
                             <button class="btn btn-block btn-light"><a href="{{ url_for('menu_register') }}">Add Items</a></button>
                             <button class="btn btn-block btn-light"><a href="{{ url_for('menu_update') }}">Edit Items</a></button>
                             <button class="btn btn-block btn-light"><a href="{{ url_for('menu_delete') }}">Delete Items</a></button>
@@ -43,9 +81,9 @@
                 </div>
 
 
-                <div class="card">
+                <div class="card mt-2 ">
                     <div class="card-header m-0 p-0">
-                        <a class="card-link " data-toggle="collapse" href="#receipts"><button class="btn btn-block btn-secondary mt-2">Receipts</button>
+                        <a class="card-link " data-toggle="collapse" href="#receipts"><button class="btn btn-block btn-secondary">Receipts</button>
                         </a>
                     </div>
                     <div id="receipts" class="collapse " data-parent="#side-panel">
