@@ -88,10 +88,9 @@ def cashier_dashboard():
 
 @app.route("/menu_api")
 def menu_api():
-    resp = requests.get("http://www.ma-web.ir/maktab52/users.json")
-    print(resp.json())
-    userdict = {"users": resp.json()}
-    return userdict
+    menu_list = database_cafe.read_menu_item_database_api('*')
+    print(menu_list)
+    return(menu_list)
 
 
 @app.route("/menu_register", methods=['POST', 'GET'])

@@ -1,4 +1,6 @@
+import json
 import psycopg2
+import psycopg2.extras
 
 DB_HOST = "localhost"
 DB_NAME = "postgres"
@@ -131,10 +133,23 @@ def read_menu_item_database(menu_item_data):
     else:
         s = 'SELECT * From menu_item where name=%s'
         cur.execute(s, (menu_item_data["phone_number"],))
+    # list_users = cur.fetchall()
     list_users = cur.fetchall()
     cur.close()
     return list_users
 
+def read_menu_item_database_api(menu_item_data):
+    cur = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
+    if menu_item_data == "*":
+        s = 'SELECT * FROM menu_item'
+        cur.execute(s)
+    else:
+        s = 'SELECT * From menu_item where name=%s'
+        cur.execute(s, (menu_item_data["phone_number"],))
+    # list_users = cur.fetchall()
+    list_users = cur.fetchall()
+    cur.close()
+    return json.dumps(list_users)
 
 ###oredrs
 def create_orders_database(orderdata):
