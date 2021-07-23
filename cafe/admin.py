@@ -5,6 +5,13 @@ from cafe.models import User, Table, MenuItem, Orders, Receipts
 
 admin.site.register(User)
 admin.site.register(Table)
-admin.site.register(MenuItem)
+# admin.site.register(MenuItem)
 admin.site.register(Orders)
 admin.site.register(Receipts)
+
+
+class MenuItemAdmin(admin.ModelAdmin):
+    readonly_fields = ('creat_time_stamp','modified_time_stamp',)
+
+
+admin.site.register(MenuItem, MenuItemAdmin)
