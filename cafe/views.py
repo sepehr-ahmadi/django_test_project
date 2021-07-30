@@ -1,11 +1,54 @@
-from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.http import HttpResponse, request
 from django.shortcuts import render
 from django.views import View, generic
+from django.forms import ModelForm
 
 from .models import Orders, MenuItem, Table
 # Create your views here.
 from django.template import loader
-from .forms import CreateMenuItem
+from .forms import CreateMenuItem, LoginForm
+from django.contrib.auth import views as auth_views
+
+
+
+class LoginViews(View):
+    def get(self, request, *args, **kwargs):
+        print(request)
+        return render(request, 'cafe/login.html')
+
+    def post(self, request, *args, **kwargs):
+        user = authenticate(username=request.POST['username'], password=request.POST['password'])
+        if user:
+            login(request, user)
+            print(user)
+            return HttpResponse('ok')
+        else:
+            return HttpResponse('false')
+
+
+class ProfileViews(LoginRequiredMixin, PermissionRequiredMixin, View):
+    permission_required = 'auth.see_profile'
+
+    def get(self, request, *args, **kwargs):
+        pass
+
+
+# def login(request):
+#     if request.method == 'POST':
+#         form = LoginForm(request.POST)
+#         print(form)
+#         user=authenticate(username=form.cleaned_data['user_name'],password=form.cleaned_data['password'])
+#         print()
+#         print(form.cleaned_data['user_name'])
+#         print(form.cleaned_data['password'])
+#         return HttpResponse('ok')
+#     elif request.method == "GET":
+#         form = LoginForm()
+#         return render(request, 'cafe/login.html', {'form': form})
+#
+#     pass
 
 
 def order_list(request):
@@ -89,7 +132,7 @@ class OrderingMenu(View):
 
 def create_menu_item(request):
     if request.method == 'POST':
-        form = CreateMenuItem(request.POST,request.FILES)
+        form = CreateMenuItem(request.POST, request.FILES)
         print(form)
         # if form.is_valid():
         name = form.cleaned_data['name']
@@ -98,10 +141,29 @@ def create_menu_item(request):
         discount = form.cleaned_data['discount']
         serving_time_period = form.cleaned_data['serving_time_period']
         estimated_cooking_time = form.cleaned_data['estimated_cooking_time']
-        image=form.cleaned_data['image']
-        menu_item=MenuItem(name=name,price=price,catagory=catagory,discount=discount,serving_time_period=serving_time_period,estimated_cooking_time=estimated_cooking_time,image=image)
+        image = form.cleaned_data['image']
+        menu_item = MenuItem(name=name, price=price, catagory=catagory, discount=discount,
+                             serving_time_period=serving_time_period, estimated_cooking_time=estimated_cooking_time,
+                             image=image)
         menu_item.save()
         return HttpResponse('ok')
-    elif request.method=="GET":
+    elif request.method == "GET":
         form = CreateMenuItem()
         return render(request, 'cafe/create_menu_item.html', {'form': form})
+
+
+class CreateMenuItemClassForm(ModelForm):
+    class Meta:
+        model = MenuItem
+        fields = ['name', 'price', 'catagory', 'discount', 'serving_time_period', 'estimated_cooking_time', 'image']
+
+
+class CreateMenuItem_g(generic.FormView):
+    form_class = CreateMenuItemClassForm
+    template_name = 'cafe/create_menu_item.html'
+    success_url = "https://google.com"
+
+    def form_valid(self, form):
+        f = form
+        f.save()
+        return super().form_valid(form)

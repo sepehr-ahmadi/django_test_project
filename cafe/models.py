@@ -15,7 +15,7 @@ class Table(models.Model):
 
 class MenuItem(models.Model):
     name = models.CharField(max_length=30, null=False, blank=False, help_text='enter your menu item name:')
-    price = models.IntegerField(null=False, help_text='please enter price of item', verbose_name='price(irr)',
+    price = models.IntegerField(null=False, help_text='please enter price of item', verbose_name='price(irr)',blank=False,
                                 validators=[validator.menu_item_price_validator])
     catagory = models.CharField(max_length=30)
     image = models.ImageField(upload_to='menu_item/img')
@@ -30,13 +30,18 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return f'{self.id}# {self.name} {self.price}'
-
+STATUS_CHOICES = [
+    ('d', 'Draft'),
+    ('p', 'Published'),
+    ('w', 'Withdrawn'),
+    ('d','deleted')
+]
 
 class Orders(models.Model):
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     menu_items = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     number = models.IntegerField()
-    status = models.fields.CharField(max_length=30)
+    status = models.fields.CharField(max_length=30,choices=STATUS_CHOICES)
 
     @classmethod
     def filter_by_menuitem(cls, menu_item):
